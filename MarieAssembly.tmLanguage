@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>mas</string>
+		<string>MAS</string>
+	</array>
+	<key>name</key>
+	<string>Assembly MARIE</string>
+	<key>patterns</key>
+	<array>
+		<? Directives Reference ?>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:org|oct|dec|hex)\b</string>
+			<key>name</key>
+			<string>entity.name.function.directives</string>
+		</dict>
+		<? Instruction ?>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:jns|load|store|add|subt|input|output|halt|skipcond|jump|clear|addi|jumpi|loadi|storei)\b</string>
+			<key>name</key>
+			<string>support.class.marie</string>
+		</dict>
+		<? Register ?>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:ac|mar|mbr|pc|ip|inreg|outreg|)\b</string>
+			<key>name</key>
+			<string>entity.name.function.reg</string>
+		</dict>
+		<? 单行注释 ?>
+		<? Single line comment?>
+		<dict>
+			<key>match</key>
+			<string>/.*$</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<? 标签 ?>
+		<? Code label ?>
+		<dict>
+			<key>match</key>
+			<string>(\w+[,])</string>
+			<key>name</key>
+			<string>entity.name.tag</string>
+		</dict>
+		<? 数字 ?>
+		<? Number ?>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.dec</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Decimal numbers</string>
+			<key>match</key>
+			<string>\b([0-9]+)\b</string>
+			<key>name</key>
+			<string>constant.numeric.dec</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.hex</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Exadecimal numbers format: FFh</string>
+			<key>match</key>
+			<string>\b([0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]+)\b</string>
+			<key>name</key>
+			<string>constant.numeric.hex</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.asm</string>
+	<key>uuid</key>
+	<string>7B6E8C84-1C74-4459-AC91-3A97397BCC47</string>
+</dict>
+</plist>
